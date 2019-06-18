@@ -1,19 +1,10 @@
 version: "3"
 services:
-  web:
-    # replace username/repo:tag with your name and image details
+  ilivalidator:
     image: sogis/ilivalidator-web-service-micronaut:latest
     deploy:
       replicas: 3
-      resources:
-        limits:
-          cpus: "1"
-          memory: 512M
       restart_policy:
         condition: on-failure
     ports:
-      - "8080:8080"
-    networks:
-      - webnet
-networks:
-  webnet:
+      - "4000:8080"
