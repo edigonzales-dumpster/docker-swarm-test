@@ -26,3 +26,28 @@ docker service ls
 docker service ps ilivalidatorapp_ilivalidator
 ```
 
+Names of containers:
+```
+docker container ls -f "name=ilivalidatorapp_ilivalidator"
+```
+
+Kill one container:
+```
+docker container rm -f 755b9a83ef56
+
+```
+
+```
+docker stack rm ilivalidatorapp
+```
+
+Leave Docker Swarm
+```
+docker swarm leave --force
+```
+
+-----
+
+
+docker run -d -p 80:80 -p 443:443 --name caddy -v /Users/stefan/tmp/Caddyfile:/etc/Caddyfile -v /Users/stefan/tmp/srv:/srv -v /path/to/certs:/root/.caddy abiosoft/caddy
+docker run -d -p 80:80 --name caddy -v /Users/stefan/tmp/Caddyfile:/etc/Caddyfile -v /Users/stefan/tmp/srv:/srv abiosoft/caddy
